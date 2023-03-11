@@ -24,9 +24,9 @@ class PreviewActivity : AppCompatActivity() {
 
         cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
-        Log.i("preview", "oncreate further")
+        Log.d("preview", "oncreate further")
         cameraProviderFuture.addListener({
-            Log.i("preview", "runnable")
+            Log.d("preview", "runnable")
             bindPreview(cameraProviderFuture.get())
         }, ContextCompat.getMainExecutor(this))
 
