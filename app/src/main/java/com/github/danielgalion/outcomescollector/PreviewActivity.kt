@@ -61,13 +61,4 @@ import com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions
 
         return imageAnalysis
     }
-
-    private fun initDetector() {
-        val options = ObjectDetectorOptions.Builder()
-            .setDetectorMode(ObjectDetectorOptions.SINGLE_IMAGE_MODE)
-            .build()
-
-        val objectDetector = ObjectDetection.getClient(options)
-
-    }
 }
