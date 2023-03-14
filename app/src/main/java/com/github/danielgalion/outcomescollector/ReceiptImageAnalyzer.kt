@@ -31,6 +31,16 @@ import com.google.mlkit.vision.objects.defaults.ObjectDetectorOptions
             objectDetector.process(inputImage)
                 .addOnSuccessListener {
                     Log.i(TAG, it.size.toString())
+
+                    // TODO: define categories
+                    if (it?.size != 0) {
+                        val detected = it?.get(0)
+                        val detLabels = detected?.labels
+
+                        if (detLabels?.size != 0)
+                            Log.i(TAG, detLabels?.get(0)?.text ?: "")
+                    }
+
                     image.close()
                 }
                 .addOnFailureListener {
